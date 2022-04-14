@@ -27,6 +27,7 @@ class Chat(models.Model):
 
 class WhiteWord(models.Model):
     chat = models.ForeignKey(Chat, on_delete=models.CASCADE)
+    my_chat = models.ForeignKey(MyChat, on_delete=models.CASCADE, blank=True, null=True)
     word = models.CharField(max_length=200)
 
     def __str__(self):

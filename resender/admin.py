@@ -24,8 +24,8 @@ class BlackWordAdmin(admin.ModelAdmin):
 
 @admin.register(WhiteWord)
 class WhiteWordAdmin(admin.ModelAdmin):
-    list_display = ('chat', 'word')
-    list_filter = ['chat__name']
+    list_display = ('chat', 'my_chat', 'word')
+    list_filter = ['chat__name', 'my_chat__name']
     search_fields = ['chat', 'word']
 
 
