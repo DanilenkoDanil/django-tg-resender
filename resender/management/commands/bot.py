@@ -25,7 +25,6 @@ def main():
         my_chats_list.append(str(i.chat_id))
     for dialog in client.iter_dialogs():
         if dialog.is_channel:
-            print(f'{dialog.id}:{dialog.title}')
             if str(dialog.id) in my_chats_list:
                 my_chats_entity[str(dialog.id)] = dialog
 
