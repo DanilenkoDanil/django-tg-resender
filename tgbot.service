@@ -1,0 +1,14 @@
+[Unit]
+Description=Telegram Bot
+After=network.target
+
+[Service]
+User=user_name
+Group=user_name
+
+WorkingDirectory=/home/user_name/django-tg-resender/
+Environment="PYTHONPATH=/home/user_name/django-tg-resender/"
+ExecStart=/home/user_name/django-tg-resender/venv/bin/python /home/user_name/django-tg-resender/manage.py bot
+
+[Install]
+WantedBy=multi-user.target
