@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 telethon = "*"
 django = "*"
+django-rest-framework = "*"
 
 [dev-packages]
 

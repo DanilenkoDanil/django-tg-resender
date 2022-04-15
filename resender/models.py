@@ -61,3 +61,8 @@ class Message(models.Model):
     class Meta:
         verbose_name = 'Сообщение'
         verbose_name_plural = 'Сообщения'
+
+
+class Dialog(models.Model):
+    chat_id = models.CharField(max_length=200)
+    name = models.TextField()
