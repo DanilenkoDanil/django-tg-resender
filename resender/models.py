@@ -9,8 +9,8 @@ class MyChat(models.Model):
         return f'#{self.name}'
 
     class Meta:
-        verbose_name = 'Мой чат'
-        verbose_name_plural = 'Мои чаты'
+        verbose_name = 'Канал для пересылки'
+        verbose_name_plural = 'Каналы для пересылки'
 
 
 class Chat(models.Model):
@@ -21,8 +21,8 @@ class Chat(models.Model):
         return f'#{self.name}'
 
     class Meta:
-        verbose_name = 'Чат'
-        verbose_name_plural = 'Чаты'
+        verbose_name = 'Чат откуда парсить'
+        verbose_name_plural = 'Чаты откуда парсить'
 
 
 class WhiteWord(models.Model):
@@ -34,8 +34,8 @@ class WhiteWord(models.Model):
         return f'#{self.word} для {self.chat}'
 
     class Meta:
-        verbose_name = 'Белое слово'
-        verbose_name_plural = 'Белые слова'
+        verbose_name = 'Ключевое слово'
+        verbose_name_plural = 'Ключевые слова'
 
 
 class BlackWord(models.Model):
@@ -46,8 +46,8 @@ class BlackWord(models.Model):
         return f'#{self.word} для {self.chat}'
 
     class Meta:
-        verbose_name = 'Черное слово'
-        verbose_name_plural = 'Черные слова'
+        verbose_name = 'Стоп-слово'
+        verbose_name_plural = 'Стоп-слова'
 
 
 class Message(models.Model):
@@ -60,7 +60,7 @@ class Message(models.Model):
 
     class Meta:
         verbose_name = 'Сообщение'
-        verbose_name_plural = 'Сообщения'
+        verbose_name_plural = 'Лог'
 
 
 class Dialog(models.Model):

@@ -57,6 +57,7 @@ def main():
                             if object_word.my_chat.chat_id not in my_chats_send:
                                 Message.objects.create(chat=chat, message=event.message.text)
                                 try:
+                                    await client.send_message(target, chat.name)
                                     await client.forward_messages(target, event.message)
                                 except Exception as e:
                                     await client.send_message(target, chat.name)
