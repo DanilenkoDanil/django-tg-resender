@@ -48,27 +48,22 @@ def main():
                     white_words.append([i.word, i.id])
                 if not any(item.lower() in event.message.text.lower() for item in black_words):
                     for word in white_words:
-                        print(len(white_words))
                         if word[0].lower() in event.message.text.lower():
                             object_word = WhiteWord.objects.get(id=word[1])
                             try:
                                 target = my_chats_entity[object_word.my_chat.chat_id]
                             except Exception as e:
-                                print(e)
                                 continue
                             if object_word.my_chat.chat_id not in my_chats_send:
-                                print(event.message.text)
                                 Message.objects.create(chat=chat, message=event.message.text)
                                 try:
                                     await client.forward_messages(target, event.message)
                                 except Exception as e:
-                                    print(e)
                                     await client.send_message(target, chat.name)
                                     await client.send_message(target, event.message.text)
                                 my_chats_send.append(object_word.my_chat.chat_id)
-                print('Новое сообщение')
         except AttributeError:
-            print('AttributeError')
+            pass
     client.run_until_disconnected()
 
 
