@@ -12,8 +12,8 @@ django.setup()
 def main():
     client = TelegramClient(
         "session",
-        3566267,
-        "77c8ec3ad6b760c7d247ef4159721524"
+        2547559,
+        "1a1975ef3b460f054d2777ddf45e8faf"
     )
     client.start()
     client.get_dialogs()
