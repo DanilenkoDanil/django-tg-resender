@@ -1,5 +1,5 @@
 from django.contrib import admin
-from resender.models import Chat, MyChat, BlackWord, WhiteWord, Message
+from resender.models import Chat, MyChat, BlackWord, WhiteWord, Message, Dialog
 from django.contrib.admin import RelatedFieldListFilter
 
 
