@@ -35,3 +35,6 @@ class MessagedAdmin(admin.ModelAdmin):
     list_display = ('chat', 'date')
     search_fields = ['chat', 'date']
 
+@admin.register(Dialog)
+class DialogAdmin(admin.ModelAdmin):
+    pass
