@@ -63,6 +63,7 @@ def main():
                                 try:
                                     target = my_chats_entity[object_word.my_chat.chat_id]
                                 except Exception as e:
+                                    print('error')
                                     print(e)
                                     continue
                                 if object_word.my_chat.chat_id not in my_chats_send:
