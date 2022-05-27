@@ -37,18 +37,20 @@ def main():
         chat_objects = Chat.objects.all()
         for i in chat_objects:
             chats_list.append(str(i.chat_id).replace("-100", ""))
-        print()
         try:
             if str(event.message.peer_id.channel_id) in chats_list:
+                print('1')
                 chat = Chat.objects.get(chat_id="-100" + str(event.message.peer_id.channel_id))
                 black_words = []
                 white_words = []
                 black_words_objects = BlackWord.objects.filter(chat=chat)
                 white_words_objects = WhiteWord.objects.filter(chat=chat)
+                print('2')
                 for i in black_words_objects:
                     black_words.append(i.word)
                 for i in white_words_objects:
                     white_words.append([i.word, i.id])
+                print('3')
                 try:
                     if not any(item.lower() in event.message.text.lower() for item in black_words):
                         for word in white_words:
