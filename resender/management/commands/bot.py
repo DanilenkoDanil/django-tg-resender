@@ -58,10 +58,12 @@ def main():
                         for word in white_words:
                             print('4')
                             if word[0].lower() in event.message.text.lower():
+                                print('5')
                                 object_word = WhiteWord.objects.get(id=word[1])
                                 try:
                                     target = my_chats_entity[object_word.my_chat.chat_id]
                                 except Exception as e:
+                                    print(e)
                                     continue
                                 if object_word.my_chat.chat_id not in my_chats_send:
                                     Message.objects.create(chat=chat, message=event.message.text)
