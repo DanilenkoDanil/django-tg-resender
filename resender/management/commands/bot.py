@@ -28,6 +28,7 @@ def main():
         if dialog.is_channel:
             if str(dialog.id) in my_chats_list:
                 my_chats_entity[str(dialog.id)] = dialog
+    print(my_chats_entity)
 
     @client.on(events.NewMessage())
     async def handler_first(event):
