@@ -56,6 +56,7 @@ def main():
                 try:
                     if not any(item.lower() in event.message.text.lower() for item in black_words):
                         for word in white_words:
+                            print('4')
                             if word[0].lower() in event.message.text.lower():
                                 object_word = WhiteWord.objects.get(id=word[1])
                                 try:
