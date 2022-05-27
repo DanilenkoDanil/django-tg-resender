@@ -10,6 +10,7 @@ django.setup()
 
 
 def main():
+    print('Start')
     client = TelegramClient(
         "session",
         2547559,
@@ -30,6 +31,7 @@ def main():
 
     @client.on(events.NewMessage())
     async def handler_first(event):
+        print('New_message')
         my_chats_send = []
         chats_list = []
         chat_objects = Chat.objects.all()
