@@ -24,8 +24,10 @@ def main():
     my_chats_entity = {}
     for i in my_chats_objects:
         my_chats_list.append(str(i.chat_id))
+    print(my_chats_list)
     for dialog in client.iter_dialogs():
         if dialog.is_channel:
+            print(str(dialog.id))
             if str(dialog.id) in my_chats_list:
                 my_chats_entity[str(dialog.id)] = dialog
     print(my_chats_entity)
@@ -38,8 +40,6 @@ def main():
         chat_objects = Chat.objects.all()
         for i in chat_objects:
             chats_list.append(str(i.chat_id).replace("-100", ""))
-        print(chats_list)
-        print(event.message.peer_id.channel_id)
         try:
             if str(event.message.peer_id.channel_id) in chats_list:
                 print('1')
