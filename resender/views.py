@@ -15,7 +15,7 @@ class GetIdApiView(generics.ListAPIView):
         loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)
         client = TelegramClient(
-            "session_for_id",
+            "session",
             3566267,
             "77c8ec3ad6b760c7d247ef4159721524",
             loop=loop
